@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Learn:JSFuck</title>
+</head>
+<body>
+    <header><h1>BEM VINDO, ANDRÉ<br>AQUI VOCÊ TERÁ QUE APRENDER <strong>JSFuck</strong> PARA PROSSEGUIR</h1></header>
+    <h2>O BÁSICO:</h2>
+    <p>No JSFuck, programamos usando apenas 6 caracteres: <strong>! [ ] ( ) +</strong> . É estritamente proibido utilizar qualquer coisa além disso, nem mesmo o espaço (' ') é permitido.<br>
+        Lembre-se que se você apertar o botão 'help' ali em baixo, abrirá uma biblioteca de tudo que você já fez em JSFuck, use Ctrl + C e Ctrl + V (copia e cola) à vontade</p>
+
+    <div id="basico" class="basico">
+        <h3>FUNDAMENTOS</h3>
+        <p>false = ![]</p>
+        <p>true = !![]</p>
+        <p>'true' = !![]+[]</p>
+        <p>undefined = [][[]]</p>
+        <p>NaN = +[![]]</p>
+        <p>0 = +[]</p>
+        <p>1 = +!+[]</p>
+        <p>2 = !![]+!![]</p>
+        <br>
+
+        <p>Considerando que toda string é um Array, podemos fazer:</p>
+        <p>'f' = ('false')[0] -> 'f' = (![]+[])[+[]]</p>
+        <p>'a' = ('false')[1] -> 'a' = (![]+[])[+!+[]]</p>
+        <p>'l' = ('false')[2] -> 'a' = (![]+[])[!![]+!![]]</p>
+        <p>'s' = ('false')[3] -> 'a' = (![]+[])[!![]+!![]+!![]]</p>
+        <p>'e' = ('false')[4] -> 'a' = (![]+[])[!![]+!![]+!![]+!![]]</p>
+        <br>
+        <p>E então, podemos concatenar para fazer:</p>
+        <p>'faltar' = ('false')[0]+('false')[1]+('false')[2]+('true')[0]+('false')[1]+('true')[1] -> 'faltar' = (![]+[])[+[]]+(![]+[])[+!+[]]+(![]+[])[!![]+!![]]+(!![]+[])[+[]]+(![]+[])[+!+[]]+(!![]+[])[+!+[]]</p>
+    </div>
+    <div id="desafio1" class="desafio1">
+        <h3>SEU PRIMEIRO DESAFIO VAI SER RETORNAR 'constructor' considerando que:</h3>
+        <p>'function flat() { [native code] } = ([][('flat')+[]])'</p>
+        <p>'constructor = '</p>
+        <!-- 'flat' = (![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]] -->
+        <!-- 'function flat() { [native code] }' = ([][((![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]])]+[]) -->
+        <!-- 'constructor' = ([][(![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[!![]+!![]+!![]]+([!![]]+[][(![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!![]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+(!![]+[])[!![]+!![]]+([][((![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]])]+[])[!![]+!![]+!![]]+(!![]+[])[+[]]+([!![]]+[][(![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]] -->
+    </div>
+</body>
+</html>
