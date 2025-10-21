@@ -3,49 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSFuck Academy</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="components/navbar.js"></script>
     <script src="script.js"></script>
-    <title>Learn:JSFuck</title>
 </head>
-<body>
-    <header><h1>BEM VINDO, ANDRÉ<br>AQUI VOCÊ TERÁ QUE APRENDER <strong>JSFuck</strong> PARA PROSSEGUIR</h1></header>
-    <h2>O BÁSICO:</h2>
-    <p>No JSFuck, programamos usando apenas 6 caracteres: <strong>! [ ] ( ) +</strong> . É estritamente proibido utilizar qualquer coisa além disso, nem mesmo o espaço (' ') é permitido.<br>
-        Lembre-se que se você apertar o botão 'help' ali em baixo, abrirá uma biblioteca de tudo que você já fez em JSFuck, use Ctrl + C e Ctrl + V (copia e cola) à vontade</p>
+<body class="bg-black text-green-500 min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+    
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">BEM VINDO, ANDRÉ</h1>
+            <h2 class="text-2xl md:text-3xl">AQUI VOCÊ TERÁ QUE APRENDER <strong class="text-green-400">JSFuck</strong> PARA PROSSEGUIR</h2>
+        </header>
 
-    <div id="basico" class="basico">
-        <h3>FUNDAMENTOS</h3>
-        <p>false = ![]</p>
-        <p>true = !![]</p>
-        <p>'true' = !![]+[]</p>
-        <p>undefined = [][[]]</p>
-        <p>NaN = +[![]]</p>
-        <p>0 = +[]</p>
-        <p>1 = +!+[]</p>
-        <p>2 = !![]+!![]</p>
-        <br>
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 border-b border-green-500 pb-2">O BÁSICO:</h2>
+            <p class="mb-6">No JSFuck, programamos usando apenas 6 caracteres: <strong class="text-green-400">! [ ] ( ) +</strong>. É estritamente proibido utilizar qualquer coisa além disso, nem mesmo o espaço (' ') é permitido.<br>
+            Lembre-se que se você apertar o botão 'Sobre', abrirá uma página com outras informações uteis, use Ctrl + C e Ctrl + V (copia e cola) à vontade<br>
+            Se você apertar o botão 'Bibliotaca', abrirá o meu GitHub com tudo que eu já fiz em JSFuck, evite ficar indo lá para copiar os códigos, pelo menos tente</p>
+        </section>
 
-        <p>Considerando que toda string é um Array, podemos fazer:</p>
-        <p>'f' = ('false')[0] -> 'f' = (![]+[])[+[]]</p>
-        <p>'a' = ('false')[1] -> 'a' = (![]+[])[+!+[]]</p>
-        <p>'l' = ('false')[2] -> 'a' = (![]+[])[!![]+!![]]</p>
-        <p>'s' = ('false')[3] -> 'a' = (![]+[])[!![]+!![]+!![]]</p>
-        <p>'e' = ('false')[4] -> 'a' = (![]+[])[!![]+!![]+!![]+!![]]</p>
-        <br>
-        <p>E então, podemos concatenar para fazer:</p>
-        <p>'faltar' = ('false')[0]+('false')[1]+('false')[2]+('true')[0]+('false')[1]+('true')[1] -> 'faltar' = (![]+[])[+[]]+(![]+[])[+!+[]]+(![]+[])[!![]+!![]]+(!![]+[])[+[]]+(![]+[])[+!+[]]+(!![]+[])[+!+[]]</p>
-    </div>
-    <div id="desafio1" class="desafio1">
-        <h3>SEU PRIMEIRO DESAFIO VAI SER RETORNAR 'constructor' considerando que:</h3>
-        <p>'flat' = (![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]</p>
-        <p>'function flat() { [native code] }' = ([][('flat')+[]])</p>
-        <p>'constructor = ([]["flat"]+[])[3]+([true]+[]["flat"])[1+[0]]+(undefined+[])[1]+(false+[])[3]+(true+[])[0]+(true+[])[1]+(undefined+[])[0]+([]["flat"]+[])[3]+(true+[])[0]+([true]+[]["flat"])[1+[0]]+(true+[])[1]'</p>
-        <h4>Digite o código do 'constructor' a seguir (sem NENHUM outro caractere):</h4>
-        <input type="text" name="resposta" id="resposta">
-        <input type="button" value="Confirmar" onclick="VerificarResposta()">
-    </div>
-    <footer>
-        <button onclick="Biblioteca()" style="position: fixed;">Need Help?</button>
-    </footer>
+        <section id="basico" class="mb-12 p-6 bg-gray-900 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-green-400">FUNDAMENTOS</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-800 p-4 rounded">
+                    <p class="font-mono">false = ![]</p>
+                    <p class="font-mono">true = !![]</p>
+                    <p class="font-mono">'true' = !![]+[]</p>
+                    <p class="font-mono">undefined = [][[]]</p>
+                    <p class="font-mono">NaN = +[![]]</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded">
+                    <p class="font-mono">0 = +[]</p>
+                    <p class="font-mono">1 = +!+[]</p>
+                    <p class="font-mono">2 = !![]+!![]</p>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <p class="mb-4">Considerando que toda string é um Array, podemos fazer:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-800 p-4 rounded">
+                        <p class="font-mono">'f' = ('false')[0] -> 'f' = (![]+[])[+[]]</p>
+                        <p class="font-mono">'a' = ('false')[1] -> 'a' = (![]+[])[+!+[]]</p>
+                        <p class="font-mono">'l' = ('false')[2] -> 'l' = (![]+[])[!![]+!![]]</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded">
+                        <p class="font-mono">'s' = ('false')[3] -> 's' = (![]+[])[!![]+!![]+!![]]</p>
+                        <p class="font-mono">'e' = ('false')[4] -> 'e' = (![]+[])[!![]+!![]+!![]+!![]]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <p class="mb-4">E então, podemos concatenar para fazer:</p>
+                <div class="bg-gray-800 p-4 rounded">
+                    <p class="font-mono">'faltar' = (![]+[])[+[]]+(![]+[])[+!+[]]+(![]+[])[!![]+!![]]+(!![]+[])[+[]]+(![]+[])[+!+[]]+(!![]+[])[+!+[]]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="desafio1" class="p-6 bg-gray-900 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4 text-green-400">SEU PRIMEIRO DESAFIO VAI SER RETORNAR 'constructor'</h3>
+            
+            <div class="mb-6 space-y-4">
+                <div class="bg-gray-800 p-4 rounded">
+                    <p class="font-mono">'flat' = (![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded">
+                    <p class="font-mono">'function flat() { [native code] }' = ([][('flat')+[]])</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded">
+                    <p class="font-mono">'constructor' = ([]["flat"]+[])[3]+([true]+[]["flat"])[1+[0]]+(undefined+[])[1]+(false+[])[3]+(true+[])[0]+(true+[])[1]+(undefined+[])[0]+([]["flat"]+[])[3]+(true+[])[0]+([true]+[]["flat"])[1+[0]]+(true+[])[1]</p>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <h4 class="text-lg mb-4">Digite o código do 'constructor' a seguir (sem NENHUM outro caractere):</h4>
+                <div class="flex flex-col md:flex-row gap-4">
+                    <input type="text" name="resposta" id="resposta" class="flex-grow p-3 bg-gray-800 border border-green-500 rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button onclick="VerificarResposta()" class="px-6 py-3 bg-green-600 hover:bg-green-700 text-black font-bold rounded transition-colors">Confirmar</button>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
