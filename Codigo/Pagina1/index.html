@@ -37,11 +37,15 @@
     </div>
     <div id="desafio1" class="desafio1">
         <h3>SEU PRIMEIRO DESAFIO VAI SER RETORNAR 'constructor' considerando que:</h3>
-        <p>'function flat() { [native code] } = ([][('flat')+[]])'</p>
-        <p>'constructor = '</p>
-        <!-- 'flat' = (![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]] -->
-        <!-- 'function flat() { [native code] }' = ([][((![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]])]+[]) -->
-        <!-- 'constructor' = ([][(![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]]+[])[!![]+!![]+!![]]+([!![]]+[][(![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!![]+!![]+!![]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+(!![]+[])[!![]+!![]]+([][((![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]])]+[])[!![]+!![]+!![]]+(!![]+[])[+[]]+([!![]]+[][(![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]])[+!+[]+[+[]]]+(!![]+[])[+!+[]] -->
+        <p>'flat' = (![]+[])[+[]]+(![]+[])[+!+[]+!+[]]+(![]+[])[+!+[]]+(!![]+[])[+[]]</p>
+        <p>'function flat() { [native code] }' = ([][('flat')+[]])</p>
+        <p>'constructor = ([]["flat"]+[])[3]+([true]+[]["flat"])[1+[0]]+(undefined+[])[1]+(false+[])[3]+(true+[])[0]+(true+[])[1]+(undefined+[])[0]+([]["flat"]+[])[3]+(true+[])[0]+([true]+[]["flat"])[1+[0]]+(true+[])[1]'</p>
+        <h4>Digite o código do 'constructor' a seguir (sem NENHUM outro caractere):</h4>
+        <input type="text" name="resposta" id="resposta">
+        <input type="button" value="Confirmar" onclick="VerificarResposta()">
     </div>
+    <footer>
+        <button onclick="Biblioteca()" style="position: fixed;">Need Help?</button>
+    </footer>
 </body>
 </html>
